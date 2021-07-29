@@ -27,7 +27,7 @@ while True:
     data = [time_parsed, price_eur]
     writer.writerow(data)
 
-    f.close
+    f.close()
 
     print('OK')  # Prints a message every time loop runs for debugging
 
