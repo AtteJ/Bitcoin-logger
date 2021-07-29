@@ -37,6 +37,6 @@ while True:
 
     f.close()
 
-    print('OK', time_now)  # Prints a message every loop for debugging
+    print('OK', time_now)  # prints a message every loop for debugging
 
-    time.sleep(600)
+    time.sleep(600)  # sleeps for 10 minutes
