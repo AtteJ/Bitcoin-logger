@@ -10,9 +10,12 @@ while True:
     f = open('bitcoin.csv', 'a')  # Opens a precreated csv file, add header manually
     writer = csv.writer(f)
 
-    r = urlopen(url)
-    data_json = json.loads(r.read())
-
+    try:
+        r = urlopen(url)
+        data_json = json.loads(r.read())
+    except urllib.error.HTTPError as exception:
+        print(exception)
+        
     time_now = time.strftime('%Y-%m-%d %H:%M:%S')  # gets system time
 
     bpi = data_json['bpi']  
