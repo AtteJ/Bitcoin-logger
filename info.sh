@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+# Only works with raspberry pi and specific directory structure
+
 # defines colors
 BLUE='\033[1;34m'
 CYAN='\033[1;36m'
@@ -40,7 +42,7 @@ echo "---------------------------------------"
 
 # calculates bitcoins value using last line from csv
 IFS=, read -r time price < <(tail -n1 /media/pi/tikku/data/bitcoin.csv)
-AMOUNT=0.0122492
+AMOUNT=0.0
 price=${price%$'\r'}
 value=$(echo "scale=2; $price*$AMOUNT/1"|bc)
 echo -e "${BLUE}Bitcoin price is ${RED}$price${BLUE} €"
